@@ -20,10 +20,16 @@
           <text-input v-model="form.type" :error="form.errors.type" class="pb-8 pr-6 w-full lg:w-1/2" label="Type" />
           <text-input v-model="form.by" :error="form.errors.by" class="pb-8 pr-6 w-full lg:w-1/2" label="Submitted By" />
           <text-input v-model="form.area" :error="form.errors.area" class="pb-8 pr-6 w-full lg:w-1/2" label="Area" />
-          <textarea-input v-model="form.description" :error="form.errors.description" class="pb-8 pr-6 w-full lg:w-full" label="Course Short Description" />
+          <select-input v-model="form.category" :error="form.errors.category" class="pb-8 pr-6 w-full lg:w-1/2" label="Category">
+            <option v-for="(r, i) of categories" :key="i" :value="r">{{ r }}</option>
+          </select-input>
           <file-input v-model="form.photo" :error="form.errors.photo" class="pb-8 pr-6 w-full lg:w-1/2" type="file" accept="image/*" label="Photo" />
           <div class="pb-8 pr-6 w-full lg:w-1/2">
             <img v-if="training.photo" class="block -my-2 mr-2 w-300 h-300 rounded-lg" :src="training.photo" />
+          </div>
+          <textarea-input v-model="form.short_desc" :error="form.errors.short_desc" class="pb-8 pr-6 w-full lg:w-full" label="Course Short Description" />
+          <div class="pb-8 pr-6 w-full lg:w-full">
+            <QuillEditor v-model:content="form.description" contentType="html" placeholder="Type and style Description" toolbar="full" theme="snow" />
           </div>
         </div>
         <div class="flex items-center px-8 py-4 bg-gray-50 border-t border-gray-100">
@@ -42,6 +48,10 @@ import TextInput from '@/Shared/TextInput'
 import LoadingButton from '@/Shared/LoadingButton'
 import FileInput from '@/Shared/FileInput'
 import TextareaInput from '@/Shared/TextareaInput'
+import SelectInput from '@/Shared/SelectInput'
+
+import { QuillEditor } from '@vueup/vue-quill'
+import '@vueup/vue-quill/dist/vue-quill.snow.css'
 
 export default {
   components: {
@@ -51,6 +61,8 @@ export default {
     TextInput,
     FileInput,
     TextareaInput,
+    QuillEditor,
+    SelectInput,
   },
   layout: Layout,
   props: {
@@ -59,6 +71,7 @@ export default {
   remember: 'form',
   data() {
     return {
+      categories: ['Self Learning Couses', 'Sales &amp; Applicatons Training Courses', 'Technical Courses'],
       form: this.$inertia.form({
         _method: 'put',
         name: this.training.name,
@@ -67,7 +80,9 @@ export default {
         area: this.training.area,
         training_date: this.training.training_date,
         training_time: this.training.training_time,
-        description: this.training.description,
+        description: this.training.description ?? {},
+        short_desc: this.training.short_desc,
+        category: this.training.category,
         photo: null,
       }),
     }

@@ -1,6 +1,6 @@
 <template>
   <nav class="navbar navbar-expand-md navbar-light">
-    <div class="container p-0">
+    <div class="container-fluid p-0">
       <button class="navbar-toggler ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -34,7 +34,7 @@
               </a>
               <ul class="dropdown-menu text-small user-dropdown" aria-labelledby="dropdownUser1" style="">
                 <li><Link class="dropdown-item" :href="`/admin/users/${$page.props.auth.user.id}/edit`">My Profile</Link></li>
-                <li><Link class="dropdown-item" href="/logout" method="delete">Logout</Link></li>
+                <li><Link class="dropdown-item" href="/logout">Logout</Link></li>
               </ul>
             </div>
           </div>

@@ -26,6 +26,7 @@ body {
 a {
   color: initial;
   text-decoration: none;
+  cursor: pointer;
 }
 a:hover {
   color: initial;
@@ -131,15 +132,34 @@ ul {
   font-size: 1rem;
   line-height: 1.75rem;
   font-weight: 500;
-  color: black;
+  color: #54565b;
   position: relative;
   border-bottom: 1px solid #eee;
 }
-
+.menu-item:hover {
+  color: var(--dark-color);
+  font-weight: 500;
+}
+.menu-item > a {
+  color: #54565b;
+}
 .menu-item:hover ul {
   display: block;
   margin-top: 20px;
   left: 0;
+  border-radius: 0;
+}
+
+.menu-item.active > a {
+  color: var(--dark-color);
+}
+
+.dropdown-item.active,
+.dropdown-item:active,
+.dropdown-item:focus,
+.dropdown-item:hover {
+  background-color: var(--dark-color);
+  color: white;
 }
 
 .right-warp {
@@ -177,6 +197,10 @@ ul {
 }
 .user-dropdown li {
   border-bottom: 1px solid #ddd;
+}
+
+.user-dropdown li:last-child {
+  border-bottom: none;
 }
 
 .section-warp {
@@ -728,6 +752,12 @@ ul {
     padding-left: 2rem;
     padding-right: 2rem;
     font-size: 1rem;
+  }
+  .training-card .card-name {
+    min-height: 3rem;
+  }
+  .training-card .card-desc {
+    min-height: 3rem;
   }
 }
 

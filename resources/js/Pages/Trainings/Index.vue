@@ -2,83 +2,180 @@
   <div>
     <div class="section-warp bg-color-dark">
       <div class="section-head top-section-head">
-        <h1 class="section-title text-white text-uppercase">Sales &amp; Application Courses</h1>
-        <h3 class="text-white section-subtitle">From Basic and Advanced sales training to Application training in format at convenience: presencial, online, on demand</h3>
+        <h1 class="section-title text-white text-uppercase">
+          Sales &amp; Application Courses
+        </h1>
+        <h3 class="text-white section-subtitle">
+          From Basic and Advanced sales training to Application training in
+          format at convenience: presencial, online, on demand
+        </h3>
         <div class="section-action">
           <div class="action-btn">
-            <a href="#" class="btn bg-color-light text-uppercase"> Calendar Here </a>
+            <a href="#" class="btn bg-color-light text-uppercase">
+              Calendar Here
+            </a>
           </div>
         </div>
       </div>
     </div>
     <div class="section-warp">
       <div class="section-head">
-        <h1 class="section-title">Explore Topics and <span class="text-color-dark">Skills</span></h1>
+        <h1 class="section-title">
+          Explore Topics and <span class="text-color-dark">Skills</span>
+        </h1>
         <div class="d-flex mb-4">
           <div class="training-category">
-            <a href="#" class="category-link active">Self Learning Couses</a>
-            <a href="#" class="category-link">Sales &amp; Applicatons Training Courses</a>
-            <a href="#" class="category-link">Technical Courses</a>
+            <a
+              @click="changeCategory('Self Learning Couses')"
+              class="category-link"
+              :class="{ active: selectedCategory === 'Self Learning Couses' }"
+              >Self Learning Couses</a
+            >
+            <a
+              @click="
+                changeCategory('Sales &amp; Applicatons Training Courses')
+              "
+              class="category-link"
+              :class="{
+                active:
+                  selectedCategory ===
+                  'Sales &amp; Applicatons Training Courses',
+              }"
+              >Sales &amp; Applicatons Training Courses</a
+            >
+            <a
+              @click="changeCategory('Technical Courses')"
+              class="category-link"
+              :class="{
+                active: selectedCategory === 'Technical Courses',
+              }"
+              >Technical Courses</a
+            >
           </div>
           <div class="training-mobile">
-            <select id="countries" class="form-select">
-              <option value="1">Self Learning Couses</option>
-              <option value="2">Sales &amp; Applicatons Training Courses</option>
-              <option value="3">Technical Courses</option>
+            <select
+              @change="changeCategory($event.target.value)"
+              id="countries"
+              class="form-select"
+            >
+              <option value="Self Learning Couses">Self Learning Couses</option>
+              <option value="Sales &amp; Applicatons Training Courses">
+                Sales &amp; Applicatons Training Courses
+              </option>
+              <option value="Technical Courses">Technical Courses</option>
             </select>
           </div>
           <div class="d-flex">
             <div class="input-box">
               <input type="text" class="form-control" />
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-5 h-5 text-gray-500 dark:text-gray-400">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                class="w-5 h-5 text-gray-500 dark:text-gray-400"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                ></path>
               </svg>
             </div>
             <div class="d-none position-relative mt-1">
-              <input type="text" id="email-adress-icon" class="search-input" placeholder="Search ..." />
+              <input
+                type="text"
+                id="email-adress-icon"
+                class="search-input"
+                placeholder="Search ..."
+              />
               <div class="search-input-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-5 h-5 text-gray-500 dark:text-gray-400">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  class="w-5 h-5 text-gray-500 dark:text-gray-400"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                  ></path>
                 </svg>
               </div>
-              <input type="search" class="form-control ds-input" id="search-input" placeholder="Search docs..." aria-label="Search docs for..." autocomplete="off" data-bd-docs-version="5.1" spellcheck="false" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-owns="algolia-autocomplete-listbox-0" dir="auto" style="position: relative; vertical-align: top" />
+              <input
+                type="search"
+                class="form-control ds-input"
+                id="search-input"
+                placeholder="Search docs..."
+                aria-label="Search docs for..."
+                autocomplete="off"
+                data-bd-docs-version="5.1"
+                spellcheck="false"
+                role="combobox"
+                aria-autocomplete="list"
+                aria-expanded="false"
+                aria-owns="algolia-autocomplete-listbox-0"
+                dir="auto"
+                style="position: relative; vertical-align: top"
+              />
             </div>
           </div>
         </div>
-        <div class="row align-items-center">
+        <div
+          class="row align-items-center bg-secondary"
+          style="--bs-bg-opacity: 0.5"
+        >
           <div class="col-md-3 text-center">
-            <select id="countries" class="form-select">
-              <option value="1">March 2022</option>
-              <option value="2">April 2022</option>
-              <option value="3">May 2022</option>
+            <select
+              v-if="uniqueMonths.length > 0"
+              @change="onMonthChange($event)"
+              class="form-select"
+            >
+              <option v-for="d in uniqueMonths" :key="d" :value="d">
+                {{ d }}
+              </option>
             </select>
           </div>
-          <div class="col-md-9">
-            <div class="slider">
-              <Carousel :settings="settings" :breakpoints="breakpoints">
-                <Slide v-for="slide in 10" :key="slide">
+          <div class="col-md-9 bg-white">
+            <div v-if="selectedTrainings.length > 0" class="slider">
+              <Carousel :breakpoints="breakpoints" :items-to-show="1">
+                <Slide v-for="training in selectedTrainings" :key="training.id">
                   <div class="training-card carousel__item">
                     <div class="card-head">
                       <div class="card-date">
-                        <span class="card-day">02</span>
-                        <span class="card-month">March</span>
+                        <span class="card-day">{{
+                          training.training_date.split('-')[2]
+                        }}</span>
+                        <span class="card-month">{{
+                          formatMonth(training.training_date)
+                        }}</span>
                       </div>
                       <div class="card-time text-start">
-                        <span class="fs-6 mb-2 pt-2 fw-bold">9:00 - 12:00 PM</span>
+                        <span class="fs-6 mb-2 pt-2 fw-bold">{{
+                          training.training_time
+                        }}</span>
                         <span class="fw-lighter">Submitted by</span>
-                        <span class="fs-6 fw-bold">CID</span>
+                        <span class="fs-6 fw-bold">{{ training.by }}</span>
                       </div>
                     </div>
                     <a href="#">
-                      <img class="slide-image" src="img/BioPlex-2200.jpg" alt="" />
+                      <img
+                        class="slide-image"
+                        :src="training.photo"
+                        :alt="training.name"
+                      />
                     </a>
                     <div class="py-2">
                       <a href="#">
-                        <h4 class="card-name">Bioplex 2200</h4>
-                        <h4 class="card-area">Application</h4>
+                        <h4 class="card-name">{{ training.name }}</h4>
+                        <h4 class="card-area">{{ training.area }}</h4>
                       </a>
                       <a href="#">
-                        <p class="card-desc">Course Short Description</p>
+                        <p class="card-desc">{{ training.short_desc }}</p>
                       </a>
                       <a href="#" class="card-btn"> Register Now </a>
                     </div>
@@ -90,6 +187,9 @@
                 </template>
               </Carousel>
             </div>
+            <div v-else class="w-100 text-center">
+              There is no courses right now
+            </div>
           </div>
         </div>
       </div>
@@ -97,8 +197,10 @@
     <div class="section-warp">
       <div class="section-head">
         <p class="section-p">For beginer programs</p>
-        <h1 class="section-title mt-0">For New <span class="text-color-dark">Comers</span></h1>
-        <Carousel :settings="settings_beginer" :breakpoints="breakpoints_beginer">
+        <h1 class="section-title mt-0">
+          For New <span class="text-color-dark">Comers</span>
+        </h1>
+        <Carousel :items-to-show="2" :breakpoints="breakpoints_beginer">
           <Slide v-for="slide in 10" :key="slide">
             <div class="me-2 carousel__item beginer">
               <a href="#">
@@ -122,8 +224,10 @@
     <div class="section-warp">
       <div class="section-head">
         <p class="section-p">Printy Lunched</p>
-        <h1 class="section-title mt-0">Guilded <span class="text-color-dark">Training</span></h1>
-        <Carousel :settings="settings_printy" :breakpoints="breakpoints_printy">
+        <h1 class="section-title mt-0">
+          Guilded <span class="text-color-dark">Training</span>
+        </h1>
+        <Carousel :items-to-show="2" :breakpoints="breakpoints_printy">
           <Slide v-for="slide in 10" :key="slide">
             <div class="me-2 carousel__item beginer">
               <a href="#">
@@ -163,23 +267,72 @@ export default {
     Navigation,
     Pagination,
   },
+  props: {
+    trainings: Array,
+  },
+  mounted() {
+    this.filterTrainings()
+  },
+  methods: {
+    onMonthChange(e) {
+      this.selectedDate = new Date(e.target.value)
+      this.filterTrainings()
+    },
+    changeCategory(s) {
+      this.selectedCategory = s
+      this.selectedDate = null
+      this.filterTrainings()
+    },
+    filterTrainings() {
+      this.selectedTrainings = this.trainings.filter(
+        (item) => item.category === this.selectedCategory,
+      )
+      if (!this.selectedDate) this.getLowestdate(this.selectedTrainings)
+
+      let dts = this.getMonthDays(this.selectedDate)
+      this.selectedTrainings = this.selectedTrainings.filter(
+        (item) =>
+          new Date(item.training_date) >= dts[0] &&
+          new Date(item.training_date) <= dts[1],
+      )
+    },
+    getLowestdate(a) {
+      this.datesArray = [...new Set(a.map((e) => new Date(e.training_date)))]
+      this.selectedDate = new Date(Math.min.apply(null, this.datesArray))
+      let uniqueDates = []
+      for (let i = 0; i < this.datesArray.length; i++) {
+        const element = this.formatDates(this.datesArray[i])
+        if (uniqueDates.indexOf(element) === -1) uniqueDates.push(element)
+      }
+      this.uniqueMonths = uniqueDates
+    },
+    getMonthDays(date) {
+      let dt = new Date(date)
+      let month = dt.getMonth(),
+        year = dt.getFullYear()
+
+      let fromDate = new Date(year, month, 1)
+      let toDate = new Date(year, month + 1, 0)
+      return [fromDate, toDate]
+    },
+    formatDates(d) {
+      const event = new Date(d)
+      const options = { year: 'numeric', month: 'long' }
+      return event.toLocaleDateString(undefined, options)
+    },
+    formatMonth(d) {
+      const event = new Date(d)
+      const option = { month: 'long' }
+      return event.toLocaleDateString(undefined, option)
+    },
+  },
   data() {
     return {
-      // carousel settings
-      settings: {
-        itemsToShow: 1,
-        snapAlign: 'center',
-      },
-      settings_beginer: {
-        itemsToShow: 2,
-        snapAlign: 'center',
-      },
-      settings_printy: {
-        itemsToShow: 2,
-        snapAlign: 'center',
-      },
-
-      // breakpoints are mobile first
+      selectedTrainings: [],
+      selectedCategory: 'Self Learning Couses',
+      selectedDate: null,
+      datesArray: [],
+      uniqueMonths: [],
       // any settings not specified will fallback to the carousel settings
       breakpoints: {
         // 700px and up

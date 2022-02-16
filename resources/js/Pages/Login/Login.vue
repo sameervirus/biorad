@@ -14,11 +14,11 @@
           <div class="form-box">
             <p class="form-title">Welcome to Bio-Rad</p>
             <div class="form-floating mb-3">
-              <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" />
+              <input v-model="form.email" :error="form.errors.email" type="email" class="form-control" id="floatingInput" placeholder="name@example.com" />
               <label for="floatingInput">Email address</label>
             </div>
             <div class="form-floating">
-              <input type="password" class="form-control" id="floatingPassword" placeholder="Password" />
+              <input v-model="form.password" :error="form.errors.password" type="password" class="form-control" id="floatingPassword" placeholder="Password" />
               <label for="floatingPassword">Password</label>
             </div>
             <div class="d-flex mt-1 mb-2">

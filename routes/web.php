@@ -23,7 +23,7 @@ use App\Http\Controllers\UsersController;
 Route::get('/home', function() {return inertia('Home');});
 Route::get('/', function() {return inertia('Home');});
 
-Route::get('/training', function() {return inertia('Trainings/Index');});
+Route::get('/training', [TrainingController::class, 'website']);
 
 
 

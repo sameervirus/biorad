@@ -23,6 +23,7 @@ return new class extends Migration
             $table->string('area')->nullable();
             $table->date('training_date')->nullable();
             $table->string('training_time')->nullable();
+            $table->string('short_desc')->nullable();
             $table->text('description')->nullable();
             $table->string('photo_path', 100)->nullable();
             $table->timestamps();

@@ -10,7 +10,7 @@ class Training extends Model
     use HasFactory;
 
     protected $fillable = [
-        'name', 'type', 'by', 'area', 'training_date', 'training_time', 'description', 'photo_path'
+        'name', 'type', 'by', 'area', 'training_date', 'training_time','short_desc', 'description', 'photo_path', 'category', 'category_slug'
     ];
 
     /**
