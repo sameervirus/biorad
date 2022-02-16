@@ -26,28 +26,25 @@
         <div class="d-flex mb-4">
           <div class="training-category">
             <a
-              @click="changeCategory('Self Learning Couses')"
+              @click="changeCategory('self-learning-couses')"
               class="category-link"
-              :class="{ active: selectedCategory === 'Self Learning Couses' }"
+              :class="{ active: selectedCategory === 'self-learning-couses' }"
               >Self Learning Couses</a
             >
             <a
-              @click="
-                changeCategory('Sales &amp; Applicatons Training Courses')
-              "
+              @click="changeCategory('sales-amp-applicatons-training-courses')"
               class="category-link"
               :class="{
                 active:
-                  selectedCategory ===
-                  'Sales &amp; Applicatons Training Courses',
+                  selectedCategory === 'sales-amp-applicatons-training-courses',
               }"
               >Sales &amp; Applicatons Training Courses</a
             >
             <a
-              @click="changeCategory('Technical Courses')"
+              @click="changeCategory('technical-courses')"
               class="category-link"
               :class="{
-                active: selectedCategory === 'Technical Courses',
+                active: selectedCategory === 'technical-courses',
               }"
               >Technical Courses</a
             >
@@ -269,6 +266,7 @@ export default {
   },
   props: {
     trainings: Array,
+    filters: Object,
   },
   mounted() {
     this.filterTrainings()
@@ -285,7 +283,7 @@ export default {
     },
     filterTrainings() {
       this.selectedTrainings = this.trainings.filter(
-        (item) => item.category === this.selectedCategory,
+        (item) => item.category_slug === this.selectedCategory,
       )
       if (!this.selectedDate) this.getLowestdate(this.selectedTrainings)
 
@@ -329,7 +327,7 @@ export default {
   data() {
     return {
       selectedTrainings: [],
-      selectedCategory: 'Self Learning Couses',
+      selectedCategory: this.filters.category ?? 'self-learning-couses',
       selectedDate: null,
       datesArray: [],
       uniqueMonths: [],

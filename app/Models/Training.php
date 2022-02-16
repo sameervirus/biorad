@@ -32,6 +32,10 @@ class Training extends Model
                     ->orWhere('by', 'like', '%'.$search.'%')
                     ->orWhere('type', 'like', '%'.$search.'%');
             });
+        })->when($filters['category'] ?? null, function ($query, $category) {
+            $query->where(function ($query) use ($category) {
+                $query->where('category_slug', $category);
+            });
         });
     }
 }

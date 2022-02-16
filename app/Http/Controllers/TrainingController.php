@@ -17,8 +17,8 @@ class TrainingController extends Controller
     public function website()
     {
         return Inertia::render('Trainings/Index', [
-            'filters' => Request::all('search'),
-            'trainings' => Training::filter(Request::only('search'))
+            'filters' => Request::all('search', 'category'),
+            'trainings' => Training::filter(Request::only('search', 'category'))
                 ->whereDate('training_date', '>', Carbon::yesterday())
                 ->orderBy('training_date')
                 ->get()
