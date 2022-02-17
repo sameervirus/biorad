@@ -1,5 +1,6 @@
 <template>
   <div>
+    <Head title="Self Learning Course - BIO-RAD Digital Garden" />
     <div class="section-warp bg-color-dark">
       <div class="section-head top-section-head">
         <h1 class="section-title text-white text-uppercase">
@@ -102,7 +103,10 @@
         </div>
       </div>
     </div>
-    <div id="hemoglobin-testing" class="section-warp bg-light">
+    <div
+      id="hemoglobin-testing"
+      class="section-warp bg-secondary bg-opacity-10"
+    >
       <div class="section-head">
         <h1 class="section-title mb-0">
           Hemoglobin <span class="text-color-dark">Testing</span>
@@ -248,6 +252,387 @@
       </div>
     </div>
 
+    <div class="section-warp banner">
+      <div class="section-body">
+        <div class="container">
+          <div class="row g-0 justify-content-center banner-liner">
+            <div class="col-md-6">
+              <img class="w-100" src="/img/banner-liner.jpg" alt="" />
+            </div>
+            <div class="col-md-6 banner-text">
+              <h4>To access IHD academy platform</h4>
+              <p>
+                you need to request a login creation to your Bio-Rad Field
+                Application Specialist.
+              </p>
+
+              <div class="section-action">
+                <div class="action-btn">
+                  <a href="#" class="btn btn-white"> Register Now </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row justify-content-center">
+            <div class="col-md-4">
+              <div class="ih-box">
+                <div class="mb-3">
+                  <img class="w-100" src="/img/ih500.jpg" alt="" />
+                </div>
+                <h4 class="fw-bold text-uppercase">IH-500 System Overview</h4>
+                <p>
+                  On completing this training, you will be able to identify and
+                  understand the mechanical features/benefits of the different
+                  modules of the IH-500
+                </p>
+                <div class="section-action justify-content-center">
+                  <div class="action-btn mb--3">
+                    <a href="#" class="btn btn-green"> See All </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="ih-box">
+                <div class="mb-3">
+                  <img class="w-100" src="/img/ih1000.jpg" alt="" />
+                </div>
+                <h4 class="fw-bold text-uppercase">IH-1000 System Overview</h4>
+                <p>
+                  On completing this training, you will be able to identify and
+                  understand the mechanical features/benefits of the different
+                  modules of the IH-1000
+                </p>
+                <div class="section-action justify-content-center">
+                  <div class="action-btn mb--3">
+                    <a href="#" class="btn btn-green"> See All </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="infectious-disease-microbiology" class="section-warp pb-3">
+      <div class="section-head">
+        <h1 class="section-title mb-0">
+          Infectious disease & <span class="text-color-dark">Microbiology</span>
+        </h1>
+        <p class="section-p">
+          Below is the list of courses available on this platform
+        </p>
+      </div>
+    </div>
+
+    <div class="section-warp py-3 banner">
+      <div class="section-body">
+        <div class="container">
+          <div class="row g-0 justify-content-center">
+            <div class="col-md-4 offset-md-2">
+              <img class="w-100" src="/img/banner2.jpg" alt="" />
+            </div>
+            <div class="col-md-6 banner-text text-black">
+              <h4>Access to the IDD Academy</h4>
+              <p>
+                you need to request a login creation to your Bio-Rad Field
+                Application Specialist.
+              </p>
+
+              <div class="section-action">
+                <div class="action-btn">
+                  <a href="#" class="btn btn-green"> Register Now </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-warp bg-secondary bg-opacity-10">
+      <div class="section-head">
+        <h1 class="section-subtitle mb-0">Serology</h1>
+        <p class="section-p">
+          {{ getCategory(selfs, 'serology').length }} Training Courses
+        </p>
+      </div>
+      <div class="section-body">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div
+              v-for="t in getCategory(selfs, 'serology')"
+              :key="t.id"
+              class="col-md-4"
+            >
+              <div class="video-warp">
+                <div
+                  @click="setVideo(t.properties.link)"
+                  class="position-relative"
+                >
+                  <img :src="t.photo" :alt="t.title" class="w-100" />
+                  <span class="over-icon">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="40"
+                      height="39.995"
+                      viewBox="0 0 40 39.995"
+                    >
+                      <g
+                        id="svgexport-6_1_"
+                        data-name="svgexport-6 (1)"
+                        transform="translate(0 -0.002)"
+                      >
+                        <g
+                          id="Group_12522"
+                          data-name="Group 12522"
+                          transform="translate(0 0.002)"
+                        >
+                          <path
+                            id="Path_9074"
+                            data-name="Path 9074"
+                            d="M22.444,15.987,14.138,9.95a1,1,0,0,0-1.591.808V22.829a1,1,0,0,0,.547.893,1.009,1.009,0,0,0,.455.108,1,1,0,0,0,.588-.194L22.444,17.6a.994.994,0,0,0,0-1.616Z"
+                            transform="translate(4.154 3.228)"
+                            fill="#fff"
+                          />
+                          <path
+                            id="Path_9075"
+                            data-name="Path 9075"
+                            d="M20,0A20,20,0,1,0,40,20,20,20,0,0,0,20,0ZM20,36.66A16.66,16.66,0,1,1,36.658,20,16.657,16.657,0,0,1,20,36.66Z"
+                            transform="translate(0 -0.002)"
+                            fill="#fff"
+                          />
+                        </g>
+                      </g>
+                    </svg>
+                  </span>
+                </div>
+                <div class="details">
+                  <span>{{ t.properties.sub_title }}</span>
+                  <h5 class="fw-bold">
+                    {{ t.properties.title }}
+                  </h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="section-warp">
+      <div class="section-head">
+        <h1 class="section-subtitle mb-0">Bacteriology</h1>
+        <p class="section-p">
+          Basic in AST, Bacterial Infections and Screening
+        </p>
+        <p class="section-p">
+          {{ getCategory(selfs, 'bacteriology').length }} Training Courses
+        </p>
+      </div>
+      <div class="section-body">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div
+              v-for="t in getCategory(selfs, 'bacteriology')"
+              :key="t.id"
+              class="col-md-4"
+            >
+              <div class="video-warp">
+                <div
+                  @click="setVideo(t.properties.link)"
+                  class="position-relative"
+                >
+                  <img :src="t.photo" :alt="t.title" class="w-100" />
+                  <span class="over-icon">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="40"
+                      height="39.995"
+                      viewBox="0 0 40 39.995"
+                    >
+                      <g
+                        id="svgexport-6_1_"
+                        data-name="svgexport-6 (1)"
+                        transform="translate(0 -0.002)"
+                      >
+                        <g
+                          id="Group_12522"
+                          data-name="Group 12522"
+                          transform="translate(0 0.002)"
+                        >
+                          <path
+                            id="Path_9074"
+                            data-name="Path 9074"
+                            d="M22.444,15.987,14.138,9.95a1,1,0,0,0-1.591.808V22.829a1,1,0,0,0,.547.893,1.009,1.009,0,0,0,.455.108,1,1,0,0,0,.588-.194L22.444,17.6a.994.994,0,0,0,0-1.616Z"
+                            transform="translate(4.154 3.228)"
+                            fill="#fff"
+                          />
+                          <path
+                            id="Path_9075"
+                            data-name="Path 9075"
+                            d="M20,0A20,20,0,1,0,40,20,20,20,0,0,0,20,0ZM20,36.66A16.66,16.66,0,1,1,36.658,20,16.657,16.657,0,0,1,20,36.66Z"
+                            transform="translate(0 -0.002)"
+                            fill="#fff"
+                          />
+                        </g>
+                      </g>
+                    </svg>
+                  </span>
+                </div>
+                <div class="details">
+                  <span>{{ t.properties.sub_title }}</span>
+                  <h5 class="fw-bold">
+                    {{ t.properties.title }}
+                  </h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="section-warp bg-secondary bg-opacity-10">
+      <div class="section-head">
+        <h1 class="section-subtitle mb-0">Mycology</h1>
+        <p class="section-p">Basic in Invasive Fungal Infection</p>
+        <p class="section-p">
+          {{ getCategory(selfs, 'mycology').length }} Training Courses
+        </p>
+      </div>
+      <div class="section-body">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div
+              v-for="t in getCategory(selfs, 'mycology')"
+              :key="t.id"
+              class="col-md-4"
+            >
+              <div class="video-warp">
+                <div
+                  @click="setVideo(t.properties.link)"
+                  class="position-relative"
+                >
+                  <img :src="t.photo" :alt="t.title" class="w-100" />
+                  <span class="over-icon">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="40"
+                      height="39.995"
+                      viewBox="0 0 40 39.995"
+                    >
+                      <g
+                        id="svgexport-6_1_"
+                        data-name="svgexport-6 (1)"
+                        transform="translate(0 -0.002)"
+                      >
+                        <g
+                          id="Group_12522"
+                          data-name="Group 12522"
+                          transform="translate(0 0.002)"
+                        >
+                          <path
+                            id="Path_9074"
+                            data-name="Path 9074"
+                            d="M22.444,15.987,14.138,9.95a1,1,0,0,0-1.591.808V22.829a1,1,0,0,0,.547.893,1.009,1.009,0,0,0,.455.108,1,1,0,0,0,.588-.194L22.444,17.6a.994.994,0,0,0,0-1.616Z"
+                            transform="translate(4.154 3.228)"
+                            fill="#fff"
+                          />
+                          <path
+                            id="Path_9075"
+                            data-name="Path 9075"
+                            d="M20,0A20,20,0,1,0,40,20,20,20,0,0,0,20,0ZM20,36.66A16.66,16.66,0,1,1,36.658,20,16.657,16.657,0,0,1,20,36.66Z"
+                            transform="translate(0 -0.002)"
+                            fill="#fff"
+                          />
+                        </g>
+                      </g>
+                    </svg>
+                  </span>
+                </div>
+                <div class="details">
+                  <span>{{ t.properties.sub_title }}</span>
+                  <h5 class="fw-bold">
+                    {{ t.properties.title }}
+                  </h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="section-warp">
+      <div class="section-head">
+        <h1 class="section-subtitle mb-0">Validate your knowledge</h1>
+        <p class="section-p">
+          {{ getCategory(selfs, 'validate-your-knowledge').length }} Training
+          Courses
+        </p>
+      </div>
+      <div class="section-body">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div
+              v-for="t in getCategory(selfs, 'validate-your-knowledge')"
+              :key="t.id"
+              class="col-md-4"
+            >
+              <div class="video-warp">
+                <div
+                  @click="setVideo(t.properties.link)"
+                  class="position-relative"
+                >
+                  <img :src="t.photo" :alt="t.title" class="w-100" />
+                  <span class="over-icon">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="40"
+                      height="39.995"
+                      viewBox="0 0 40 39.995"
+                    >
+                      <g
+                        id="svgexport-6_1_"
+                        data-name="svgexport-6 (1)"
+                        transform="translate(0 -0.002)"
+                      >
+                        <g
+                          id="Group_12522"
+                          data-name="Group 12522"
+                          transform="translate(0 0.002)"
+                        >
+                          <path
+                            id="Path_9074"
+                            data-name="Path 9074"
+                            d="M22.444,15.987,14.138,9.95a1,1,0,0,0-1.591.808V22.829a1,1,0,0,0,.547.893,1.009,1.009,0,0,0,.455.108,1,1,0,0,0,.588-.194L22.444,17.6a.994.994,0,0,0,0-1.616Z"
+                            transform="translate(4.154 3.228)"
+                            fill="#fff"
+                          />
+                          <path
+                            id="Path_9075"
+                            data-name="Path 9075"
+                            d="M20,0A20,20,0,1,0,40,20,20,20,0,0,0,20,0ZM20,36.66A16.66,16.66,0,1,1,36.658,20,16.657,16.657,0,0,1,20,36.66Z"
+                            transform="translate(0 -0.002)"
+                            fill="#fff"
+                          />
+                        </g>
+                      </g>
+                    </svg>
+                  </span>
+                </div>
+                <div class="details">
+                  <span>{{ t.properties.sub_title }}</span>
+                  <h5 class="fw-bold">
+                    {{ t.properties.title }}
+                  </h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <vue-final-modal :click-to-close="true" v-model="showModal">
       <div class="d-flex vh-100">
         <div class="youtube-warp">
@@ -315,6 +700,9 @@ export default {
   methods: {
     getType(array, str) {
       return array.filter((i) => i.type_slug === str)
+    },
+    getCategory(array, str) {
+      return array.filter((i) => i.category_slug === str)
     },
     setVideo(video) {
       this.seletedVideo = video

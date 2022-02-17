@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\SelfLearning;
 use App\Models\Training;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Redirect;
@@ -40,6 +41,7 @@ class TrainingController extends Controller
                     'training_time' => $training->training_time,
                     'photo' => $training->photo_path ? URL::route('image', ['path' => $training->photo_path, 'w' => 300, 'fit' => 'fill']) : null
                 ]),
+                'selfs' => SelfLearning::select('type_slug', 'type')->groupBy('type_slug', 'type')->get()
         ]);
     }
 

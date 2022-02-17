@@ -218,7 +218,7 @@ ul {
 }
 .section-title {
   margin-bottom: 2.25rem;
-  font-size: 1.25rem;
+  font-size: 2rem;
   line-height: 1.3;
   margin-top: 1.25rem;
   font-weight: 700;
@@ -234,11 +234,11 @@ ul {
 
 .section-p {
   color: #424344;
-  font-size: 0.75rem;
-  line-height: 1rem;
+  font-size: 1rem;
+  line-height: 1.25rem;
   text-align: center;
   font-weight: 300;
-  margin-bottom: 0;
+  margin-top: 0.5rem;
 }
 .section-action {
   margin-top: 1.25rem;
@@ -643,17 +643,22 @@ ul {
 
 .video-warp {
   position: relative;
+  margin-bottom: 2rem;
 }
 .video-warp .over-icon {
   position: absolute;
   height: 100%;
   width: 100%;
   transition: 0.3s ease;
-  background-color: transparent;
+  background-color: rgb(0 0 0 / 30%);
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
+}
+.video-warp .over-icon:hover svg {
+  transform: scale(1.3);
+  transition-duration: 0.3s;
 }
 .video-warp svg {
   position: absolute;
@@ -682,6 +687,47 @@ ul {
   cursor: pointer;
   padding: 10px;
 }
+.banner-liner {
+  background: linear-gradient(100deg, #71699c, #704267);
+}
+.banner-text {
+  color: white;
+  padding: 1rem;
+  font-size: 1rem;
+  text-align: center;
+}
+.banner-text h4 {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: large;
+}
+.btn-white {
+  background: transparent;
+  border: 1px solid white;
+}
+.btn-white:hover {
+  background-color: var(--light-color);
+  color: white;
+}
+.btn-green {
+  background-color: white;
+  color: black;
+  border: 1px solid var(--dark-color);
+}
+.btn-green:hover {
+  background-color: var(--dark-color);
+  color: white;
+}
+.ih-box {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid #c3c3c3;
+  padding: 1rem;
+  text-align: center;
+}
+.mb--3 {
+  margin-bottom: -2rem;
+}
 @media (min-width: 640px) {
   .login-section {
     padding-left: 1.5rem;
@@ -692,6 +738,8 @@ ul {
   }
   .menu-item:after {
     content: '';
+    margin-top: 0.75rem;
+    display: block;
   }
   .menu-item:hover:after,
   .menu-item.active:after {
@@ -776,6 +824,23 @@ ul {
 }
 
 @media (min-width: 768px) {
+  .banner-text h4 {
+    font-size: x-large;
+  }
+  .ih-box {
+    margin-top: 2rem;
+  }
+  .banner .section-action {
+    justify-content: start;
+  }
+  .banner-liner {
+    background: linear-gradient(180deg, #71699c, #704267);
+  }
+  .banner-text {
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    text-align: left;
+  }
   .bg-section {
     display: block;
     width: 60%;
@@ -804,6 +869,9 @@ ul {
 }
 
 @media (min-width: 1024px) {
+  .banner .section-action {
+    justify-content: start;
+  }
   .login-section {
     padding-left: 6rem;
     padding-right: 6rem;

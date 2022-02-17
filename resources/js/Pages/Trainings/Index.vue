@@ -1,5 +1,6 @@
 <template>
   <div>
+    <Head title="Training - BIO-RAD Digital Garden" />
     <div class="section-warp bg-color-dark">
       <div class="section-head top-section-head">
         <h1 class="section-title text-white text-uppercase">
@@ -198,15 +199,20 @@
           For New <span class="text-color-dark">Comers</span>
         </h1>
         <Carousel :items-to-show="2" :breakpoints="breakpoints_beginer">
-          <Slide v-for="slide in 10" :key="slide">
+          <Slide v-for="slide in selfs" :key="slide.type_slug">
             <div class="me-2 carousel__item beginer">
-              <Link href="/training/self-learning-courses#quality-control">
-                <img class="w-100" src="img/img4.png" alt="" />
+              <Link
+                :href="`/training/self-learning-courses#${slide.type_slug}`"
+              >
+                <img class="w-100" :src="`img/${slide.type_slug}.jpg`" alt="" />
               </Link>
               <div class="p-2 text-center">
-                <a href="#" class="">
-                  <h4 class="name">Course Name</h4>
-                </a>
+                <Link
+                  :href="`/training/self-learning-courses#${slide.type_slug}`"
+                  class=""
+                >
+                  <h4 class="name">{{ slide.type }}</h4>
+                </Link>
                 <a href="#" class="card-btn"> Register Now </a>
               </div>
             </div>
@@ -267,6 +273,7 @@ export default {
   },
   props: {
     trainings: Array,
+    selfs: Array,
     filters: Object,
   },
   mounted() {

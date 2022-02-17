@@ -11,6 +11,10 @@ use Inertia\Inertia;
 
 class SelfLearningController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     
     public function website()
     {
