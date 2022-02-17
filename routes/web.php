@@ -5,8 +5,10 @@ use App\Http\Controllers\Auth\AuthenticatedController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ImagesController;
 use App\Http\Controllers\RolesController;
+use App\Http\Controllers\SelfLearningController;
 use App\Http\Controllers\TrainingController;
 use App\Http\Controllers\UsersController;
+use App\Models\SelfLearning;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,6 +26,7 @@ Route::get('/home', function() {return inertia('Home');});
 Route::get('/', function() {return inertia('Home');});
 
 Route::get('/training', [TrainingController::class, 'website']);
+Route::get('/training/self-learning-courses', [SelfLearningController::class, 'website']);
 
 
 
@@ -71,6 +74,7 @@ Route::prefix('admin')->group(function () {
     // Roles
     Route::resource('roles', RolesController::class);
     Route::resource('trainings', TrainingController::class);
+    Route::resource('self-learning', SelfLearningController::class);
 
     // Images
 

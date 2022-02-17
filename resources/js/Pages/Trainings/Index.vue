@@ -200,9 +200,9 @@
         <Carousel :items-to-show="2" :breakpoints="breakpoints_beginer">
           <Slide v-for="slide in 10" :key="slide">
             <div class="me-2 carousel__item beginer">
-              <a href="#">
+              <Link href="/training/self-learning-courses#quality-control">
                 <img class="w-100" src="img/img4.png" alt="" />
-              </a>
+              </Link>
               <div class="p-2 text-center">
                 <a href="#" class="">
                   <h4 class="name">Course Name</h4>
@@ -250,7 +250,7 @@
 </template>
 
 <script>
-import { Head } from '@inertiajs/inertia-vue3'
+import { Head, Link } from '@inertiajs/inertia-vue3'
 import App from '@/Layouts/App'
 import { Carousel, Navigation, Slide, Pagination } from 'vue3-carousel'
 
@@ -263,6 +263,7 @@ export default {
     Slide,
     Navigation,
     Pagination,
+    Link,
   },
   props: {
     trainings: Array,
