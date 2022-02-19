@@ -30,7 +30,9 @@
           <div
             class="md:text-md flex items-center justify-between p-4 w-full text-sm bg-white border-b md:px-12 md:py-0"
           >
-            <div class="mr-4 mt-1">{{ auth.user.name }}</div>
+            <div class="mr-4 mt-1">
+              <Link href="/">Site Preview</Link>
+            </div>
             <dropdown class="mt-1" placement="bottom-end">
               <template #default>
                 <div class="group flex items-center cursor-pointer select-none">

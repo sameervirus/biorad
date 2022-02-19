@@ -1,0 +1,54 @@
+@font-face {
+    font-family: 'Helvetica LT Std';
+    src: url('HelveticaLTStd-Roman.woff2') format('woff2'),
+        url('HelveticaLTStd-Roman.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Helvetica LT Std';
+    src: url('HelveticaLTStd-BlkCond.woff2') format('woff2'),
+        url('HelveticaLTStd-BlkCond.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Helvetica LT Std';
+    src: url('HelveticaLTStd-Blk.woff2') format('woff2'),
+        url('HelveticaLTStd-Blk.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Helvetica LT Std';
+    src: url('HelveticaLTStd-Bold.woff2') format('woff2'),
+        url('HelveticaLTStd-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Helvetica LT Std';
+    src: url('HelveticaLTStd-LightCond.woff2') format('woff2'),
+        url('HelveticaLTStd-LightCond.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Helvetica LT Std';
+    src: url('HelveticaLTStd-Light.woff2') format('woff2'),
+        url('HelveticaLTStd-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+

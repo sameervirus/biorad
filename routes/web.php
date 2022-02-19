@@ -28,6 +28,9 @@ Route::get('/', function() {return inertia('Home');});
 Route::get('/training', [TrainingController::class, 'website']);
 Route::get('/training/self-learning-courses', [SelfLearningController::class, 'website']);
 
+Route::get('/technical-services', function() { return inertia('Technical/Index'); });
+Route::get('/solutions', function() { return inertia('Solutions/Index'); });
+
 
 
 

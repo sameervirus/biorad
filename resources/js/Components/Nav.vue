@@ -55,22 +55,22 @@
           </li>
           <Link
             href="/events"
-            :class="{ 'menu-item': $page.component === 'Events/Index' }"
             class="menu-item"
+            :class="{ active: $page.component === 'Events/Index' }"
           >
             Events
           </Link>
           <Link
             href="/collateral-resources"
-            :class="{ 'menu-item': $page.component === 'Collateral/Index' }"
             class="menu-item"
+            :class="{ active: $page.component === 'Collateral/Index' }"
           >
             Collateral Resources
           </Link>
           <Link
             href="/technical-services"
-            :class="{ 'menu-item': $page.component === 'Services/Index' }"
             class="menu-item"
+            :class="{ active: $page.component === 'Technical/Index' }"
           >
             Technical Services
           </Link>
@@ -113,7 +113,13 @@
                   >
                 </li>
                 <li>
-                  <Link class="dropdown-item" href="/logout">Logout</Link>
+                  <Link
+                    class="dropdown-item"
+                    href="/logout"
+                    method="delete"
+                    as="button"
+                    >Logout</Link
+                  >
                 </li>
               </ul>
             </div>

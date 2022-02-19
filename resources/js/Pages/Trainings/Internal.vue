@@ -41,7 +41,7 @@
               <div class="video-warp">
                 <div
                   @click="setVideo(t.properties.link)"
-                  class="position-relative"
+                  class="position-relative linear-background h-200"
                 >
                   <img :src="t.photo" :alt="t.title" class="w-100" />
                   <span class="over-icon">
@@ -200,7 +200,7 @@
               <div class="video-warp">
                 <div
                   @click="setVideo(t.properties.link)"
-                  class="position-relative"
+                  class="position-relative linear-background h-200"
                 >
                   <img :src="t.photo" :alt="t.title" class="w-100" />
                   <span class="over-icon">
@@ -369,7 +369,7 @@
               <div class="video-warp">
                 <div
                   @click="setVideo(t.properties.link)"
-                  class="position-relative"
+                  class="position-relative linear-background h-200"
                 >
                   <img :src="t.photo" :alt="t.title" class="w-100" />
                   <span class="over-icon">
@@ -441,7 +441,7 @@
               <div class="video-warp">
                 <div
                   @click="setVideo(t.properties.link)"
-                  class="position-relative"
+                  class="position-relative linear-background h-200"
                 >
                   <img :src="t.photo" :alt="t.title" class="w-100" />
                   <span class="over-icon">
@@ -511,7 +511,7 @@
               <div class="video-warp">
                 <div
                   @click="setVideo(t.properties.link)"
-                  class="position-relative"
+                  class="position-relative linear-background h-200"
                 >
                   <img :src="t.photo" :alt="t.title" class="w-100" />
                   <span class="over-icon">
@@ -581,7 +581,7 @@
               <div class="video-warp">
                 <div
                   @click="setVideo(t.properties.link)"
-                  class="position-relative"
+                  class="position-relative linear-background h-200"
                 >
                   <img :src="t.photo" :alt="t.title" class="w-100" />
                   <span class="over-icon">

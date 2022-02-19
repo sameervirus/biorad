@@ -24,7 +24,7 @@
           <th class="pb-4 pt-6 px-6" colspan="2">Category</th>
         </tr>
         <tr
-          v-for="t in trainings"
+          v-for="t in trainings.data"
           :key="t.id"
           class="hover:bg-gray-100 focus-within:bg-gray-100"
         >
@@ -82,11 +82,12 @@
             </Link>
           </td>
         </tr>
-        <tr v-if="trainings.length === 0">
+        <tr v-if="trainings.data.length === 0">
           <td class="px-3 py-1 border-t" colspan="4">No Trainings found.</td>
         </tr>
       </table>
     </div>
+    <pagination class="mt-6" :links="trainings.links" />
   </div>
 </template>
 
@@ -98,12 +99,14 @@ import pickBy from 'lodash/pickBy'
 import throttle from 'lodash/throttle'
 import mapValues from 'lodash/mapValues'
 import SearchFilter from '@/Shared/SearchFilter'
+import Pagination from '@/Shared/Pagination'
 
 export default {
   components: {
     Head,
     Icon,
     Link,
+    Pagination,
     SearchFilter,
   },
   layout: Layout,

@@ -1,7 +1,7 @@
 <template>
   <div>
-    <Head title="Self Learning Cources" />
-    <h1 class="mb-8 text-3xl font-bold">Self Learning Cources</h1>
+    <Head title="Self Learning Courses" />
+    <h1 class="mb-8 text-3xl font-bold">Self Learning Courses</h1>
     <div class="mb-6">
       <div class="flex items-center justify-between mb-6">
         <div class="text-2xl font-bold">Quality Control</div>
@@ -65,7 +65,7 @@
             </td>
           </tr>
           <tr v-if="getType(selfs, 'quality-control').length === 0">
-            <td class="px-3 py-1 border-t" colspan="4">No Cources found.</td>
+            <td class="px-3 py-1 border-t" colspan="4">No Courses found.</td>
           </tr>
         </table>
       </div>
@@ -133,7 +133,7 @@
             </td>
           </tr>
           <tr v-if="getType(selfs, 'hemoglobin-testing').length === 0">
-            <td class="px-3 py-1 border-t" colspan="4">No Cources found.</td>
+            <td class="px-3 py-1 border-t" colspan="4">No Courses found.</td>
           </tr>
         </table>
       </div>
@@ -198,7 +198,7 @@
             </td>
           </tr>
           <tr v-if="getType(selfs, 'blood-typing').length === 0">
-            <td class="px-3 py-1 border-t" colspan="4">No Cources found.</td>
+            <td class="px-3 py-1 border-t" colspan="4">No Courses found.</td>
           </tr>
         </table>
       </div>
@@ -270,7 +270,7 @@
               getType(selfs, 'infectious-disease-microbiology').length === 0
             "
           >
-            <td class="px-3 py-1 border-t" colspan="4">No Cources found.</td>
+            <td class="px-3 py-1 border-t" colspan="4">No Courses found.</td>
           </tr>
         </table>
       </div>
@@ -428,7 +428,7 @@ export default {
       })
     },
     destroy() {
-      if (confirm('Are you sure you want to delete this Cource?')) {
+      if (confirm('Are you sure you want to delete this Course?')) {
         this.$inertia.delete(`/admin/self-learning/${this.selectedItem.id}`)
       }
     },

@@ -24,7 +24,7 @@
     >
       <Link class="group flex items-center p-2" href="/admin/self-learning">
         <icon name="office" class="mr-2 w-4 h-4 fill-white" />
-        <div class="text-white">Self Learning Cources</div>
+        <div class="text-white">Self Learning Courses</div>
       </Link>
     </div>
     <div

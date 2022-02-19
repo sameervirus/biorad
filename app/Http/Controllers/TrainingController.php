@@ -39,7 +39,7 @@ class TrainingController extends Controller
                     'description' => $training->description,
                     'training_date' => $training->training_date,
                     'training_time' => $training->training_time,
-                    'photo' => $training->photo_path ? URL::route('image', ['path' => $training->photo_path, 'w' => 300, 'fit' => 'fill']) : null
+                    'photo' => $training->photo_path ? URL::route('image', ['path' => $training->photo_path, 'h' => 200, 'fit' => 'fill']) : null
                 ]),
                 'selfs' => SelfLearning::select('type_slug', 'type')->groupBy('type_slug', 'type')->get()
         ]);
@@ -55,8 +55,9 @@ class TrainingController extends Controller
         return Inertia::render('Admin/Training/Index', [
             'filters' => Request::all('search'),
             'trainings' => Training::filter(Request::only('search'))
-                ->get()
-                ->transform(fn ($training) => [
+                ->paginate(15)
+                ->withQueryString()
+                ->through(fn ($training) => [
                     'id' => $training->id,
                     'name' => $training->name,
                     'category' => $training->category,

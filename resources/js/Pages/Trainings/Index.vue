@@ -24,7 +24,7 @@
         <h1 class="section-title">
           Explore Topics and <span class="text-color-dark">Skills</span>
         </h1>
-        <div class="d-flex mb-4">
+        <div class="filter-items mb-4">
           <div class="training-category">
             <a
               @click="changeCategory('self-learning-couses')"
@@ -50,22 +50,26 @@
               >Technical Courses</a
             >
           </div>
-          <div class="training-mobile">
+          <div class="training-mobile mt-2">
             <select
               @change="changeCategory($event.target.value)"
               id="countries"
               class="form-select"
             >
-              <option value="Self Learning Couses">Self Learning Couses</option>
-              <option value="Sales &amp; Applicatons Training Courses">
+              <option value="self-learning-couses">Self Learning Couses</option>
+              <option value="sales-amp-applicatons-training-courses">
                 Sales &amp; Applicatons Training Courses
               </option>
-              <option value="Technical Courses">Technical Courses</option>
+              <option value="technical-courses">Technical Courses</option>
             </select>
           </div>
           <div class="d-flex">
             <div class="input-box">
-              <input type="text" class="form-control" />
+              <input
+                type="text"
+                class="form-control"
+                @input="searchItems($event.target.value)"
+              />
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -81,52 +85,9 @@
                 ></path>
               </svg>
             </div>
-            <div class="d-none position-relative mt-1">
-              <input
-                type="text"
-                id="email-adress-icon"
-                class="search-input"
-                placeholder="Search ..."
-              />
-              <div class="search-input-icon">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  class="w-5 h-5 text-gray-500 dark:text-gray-400"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                  ></path>
-                </svg>
-              </div>
-              <input
-                type="search"
-                class="form-control ds-input"
-                id="search-input"
-                placeholder="Search docs..."
-                aria-label="Search docs for..."
-                autocomplete="off"
-                data-bd-docs-version="5.1"
-                spellcheck="false"
-                role="combobox"
-                aria-autocomplete="list"
-                aria-expanded="false"
-                aria-owns="algolia-autocomplete-listbox-0"
-                dir="auto"
-                style="position: relative; vertical-align: top"
-              />
-            </div>
           </div>
         </div>
-        <div
-          class="row align-items-center bg-secondary"
-          style="--bs-bg-opacity: 0.5"
-        >
+        <div class="row align-items-center training-items">
           <div class="col-md-3 text-center">
             <select
               v-if="uniqueMonths.length > 0"
@@ -160,7 +121,7 @@
                         <span class="fs-6 fw-bold">{{ training.by }}</span>
                       </div>
                     </div>
-                    <a href="#">
+                    <a class="linear-background h-150" href="#">
                       <img
                         class="slide-image"
                         :src="training.photo"
@@ -213,7 +174,12 @@
                 >
                   <h4 class="name">{{ slide.type }}</h4>
                 </Link>
-                <a href="#" class="card-btn"> Register Now </a>
+                <Link
+                  class="card-btn"
+                  :href="`/training/self-learning-courses#${slide.type_slug}`"
+                >
+                  Know more
+                </Link>
               </div>
             </div>
           </Slide>
@@ -286,8 +252,18 @@ export default {
     },
     changeCategory(s) {
       this.selectedCategory = s
-      this.selectedDate = null
+      this.selectedDate = new Date()
       this.filterTrainings()
+    },
+    searchItems(str) {
+      s = str.toLowerCase()
+      this.selectedTrainings = this.trainings.filter(
+        (i) =>
+          i.name.toLowerCase().includes(s) ||
+          i.area.toLowerCase().includes(s) ||
+          i.by.toLowerCase().includes(s) ||
+          i.type.toLowerCase().includes(s),
+      )
     },
     filterTrainings() {
       this.selectedTrainings = this.trainings.filter(
