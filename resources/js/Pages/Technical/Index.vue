@@ -28,36 +28,42 @@
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-6 col-md-2">
-            <Link href="#">
+            <a href="#">
               <div class="icon-box">
                 <Icon class="" name="training" />
                 <p>Trainings</p>
               </div>
-            </Link>
+            </a>
           </div>
           <div class="col-6 col-md-2">
-            <Link href="#">
+            <a href="#">
               <div class="icon-box">
                 <Icon class="" name="elearn" />
                 <p>E-Learning</p>
               </div>
-            </Link>
+            </a>
           </div>
           <div class="col-6 col-md-2">
-            <Link href="#">
+            <a
+              target="_blank"
+              href="https://forms.office.com/Pages/ResponsePage.aspx?id=6-sK7_Aqo0e4rlZl-KYtEY3AbRI_gUVCpc2EiWLhmAVUQVI3MTNKQ0hLREZGVjhOWDFIMlk3TzdNQi4u"
+            >
               <div class="icon-box">
                 <Icon class="" name="warranty" />
                 <p>Warranty</p>
               </div>
-            </Link>
+            </a>
           </div>
           <div class="col-6 col-md-2">
-            <Link href="#">
+            <a
+              target="_blank"
+              href="https://forms.office.com/Pages/ResponsePage.aspx?id=6-sK7_Aqo0e4rlZl-KYtEY3AbRI_gUVCpc2EiWLhmAVUOUJMVDk4ODMzSFNVVTc1RERCNUpETlpGRS4u"
+            >
               <div class="icon-box">
                 <Icon class="" name="install" />
                 <p>Install</p>
               </div>
-            </Link>
+            </a>
           </div>
         </div>
       </div>
