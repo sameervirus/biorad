@@ -57,7 +57,7 @@
               <h3>2022 Training plan coming soon with registration form</h3>
             </div>
             <did class="col-2">
-              <button class="btn btn-lights">Register</button>
+              <a target="_blank" href="#" class="btn btn-lights">Register</a>
             </did>
           </div>
         </div>

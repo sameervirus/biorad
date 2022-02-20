@@ -12,7 +12,11 @@
         </h3>
         <div class="section-action">
           <div class="action-btn">
-            <a href="#" class="btn bg-color-light text-uppercase">
+            <a
+              target="_blank"
+              href="https://outlook.office365.com/owa/calendar/491a5f2433f84c5ea25850e3d23f3d46@Bio-Rad.com/13b2203dea23403c94c65ac80e63694e18201989733276816969/calendar.html"
+              class="btn bg-color-light text-uppercase"
+            >
               Calendar Here
             </a>
           </div>
@@ -194,26 +198,56 @@
         <h1 class="section-title mt-0">
           Guilded <span class="text-color-dark">Training</span>
         </h1>
-        <Carousel :items-to-show="2" :breakpoints="breakpoints_printy">
-          <Slide v-for="slide in 10" :key="slide">
+        <div class="row justify-content-center">
+          <div class="col-md-4">
             <div class="me-2 carousel__item beginer">
-              <a href="#">
-                <img class="w-100" src="img/img4.png" alt="" />
+              <a href="/training/self-learning-courses">
+                <img class="w-100" src="img/a01.jpg" alt="" />
               </a>
               <div class="p-2 text-center">
-                <a href="#" class="">
-                  <h4 class="name mb-0">Course Name</h4>
-                  <p class="mb-3">second title</p>
+                <a href="/training/self-learning-courses" class="">
+                  <h4 class="name mb-0">Self Learning Courses</h4>
                 </a>
-                <a href="#" class="card-btn"> Register Now </a>
+                <a href="/training/self-learning-courses" class="card-btn">
+                  Know More
+                </a>
               </div>
             </div>
-          </Slide>
-
-          <template #addons>
-            <Pagination />
-          </template>
-        </Carousel>
+          </div>
+          <div class="col-md-4">
+            <div class="me-2 carousel__item beginer">
+              <a href="/training/sales-training-courses">
+                <img class="w-100" src="img/a02.jpg" alt="" />
+              </a>
+              <div class="p-2 text-center">
+                <a href="/training/sales-training-courses" class="">
+                  <h4 class="name mb-0">Sales Training Courses</h4>
+                </a>
+                <a href="/training/sales-training-courses" class="card-btn">
+                  Know More
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="me-2 carousel__item beginer">
+              <a href="/training/applicatons-training-courses">
+                <img class="w-100" src="img/a03.jpg" alt="" />
+              </a>
+              <div class="p-2 text-center">
+                <a href="/training/applicatons-training-courses" class="">
+                  <h4 class="name mb-0">Applicatons Training Courses</h4>
+                </a>
+                <a
+                  href="/training/applicatons-training-courses"
+                  class="card-btn"
+                >
+                  Know More
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>

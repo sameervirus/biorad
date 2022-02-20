@@ -13,7 +13,11 @@
         </h3>
         <div class="section-action">
           <div class="action-btn">
-            <a href="#" class="btn bg-color-light text-uppercase">
+            <a
+              target="_blank"
+              href="https://outlook.office365.com/owa/calendar/491a5f2433f84c5ea25850e3d23f3d46@Bio-Rad.com/13b2203dea23403c94c65ac80e63694e18201989733276816969/calendar.html"
+              class="btn bg-color-light text-uppercase"
+            >
               Calendar Here
             </a>
           </div>
@@ -97,7 +101,11 @@
         <div class="container">
           <div class="row">
             <div class="col">
-              <img class="w-100" src="/img/banner.jpg" />
+              <a
+                target="_blank"
+                href="https://www.youtube.com/channel/UCcpao5E_wHUGu0cUy45fN2A"
+                ><img class="w-100" src="/img/banner.jpg"
+              /></a>
             </div>
           </div>
         </div>
@@ -257,7 +265,9 @@
         <div class="container">
           <div class="row g-0 justify-content-center banner-liner">
             <div class="col-md-6">
-              <img class="w-100" src="/img/banner-liner.jpg" alt="" />
+              <a target="_blank" href="https://bio-rad-ihd.elmg.net/index.php"
+                ><img class="w-100" src="/img/banner-liner.jpg" alt=""
+              /></a>
             </div>
             <div class="col-md-6 banner-text">
               <h4>To access IHD academy platform</h4>
@@ -268,7 +278,12 @@
 
               <div class="section-action">
                 <div class="action-btn">
-                  <a href="#" class="btn btn-white"> Register Now </a>
+                  <a
+                    href="https://bio-rad-ihd.elmg.net/index.php"
+                    class="btn btn-white"
+                  >
+                    Register Now
+                  </a>
                 </div>
               </div>
             </div>
@@ -287,7 +302,12 @@
                 </p>
                 <div class="section-action justify-content-center">
                   <div class="action-btn mb--3">
-                    <a href="#" class="btn btn-green"> See All </a>
+                    <a
+                      href="https://bio-rad-ihd.elmg.net/index.php"
+                      class="btn btn-green"
+                    >
+                      See All
+                    </a>
                   </div>
                 </div>
               </div>
@@ -305,7 +325,12 @@
                 </p>
                 <div class="section-action justify-content-center">
                   <div class="action-btn mb--3">
-                    <a href="#" class="btn btn-green"> See All </a>
+                    <a
+                      href="https://bio-rad-ihd.elmg.net/index.php"
+                      class="btn btn-green"
+                    >
+                      See All
+                    </a>
                   </div>
                 </div>
               </div>
@@ -342,7 +367,13 @@
 
               <div class="section-action">
                 <div class="action-btn">
-                  <a href="#" class="btn btn-green"> Register Now </a>
+                  <a
+                    target="_blank"
+                    href="https://bio-rad.elmg.net/index.php?"
+                    class="btn btn-green"
+                  >
+                    Register Now
+                  </a>
                 </div>
               </div>
             </div>

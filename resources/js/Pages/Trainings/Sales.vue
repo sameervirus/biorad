@@ -78,7 +78,12 @@
               <h3>Will Start Soon</h3>
             </div>
             <did class="col-2">
-              <button class="btn btn-lights">Register</button>
+              <a
+                target="_blank"
+                href="https://forms.office.com/Pages/ResponsePage.aspx?id=6-sK7_Aqo0e4rlZl-KYtEc_2yVaBrr1Pu66eOVS1rRFUMFYzRjBPMU4yUzVaWklCT0lJVThNSE5EUS4u"
+                class="btn btn-lights"
+                >Register</a
+              >
             </did>
           </div>
         </div>
