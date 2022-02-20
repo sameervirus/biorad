@@ -27,6 +27,9 @@ Route::get('/', function() {return inertia('Home');});
 
 Route::get('/training', [TrainingController::class, 'website']);
 Route::get('/training/self-learning-courses', [SelfLearningController::class, 'website']);
+Route::get('/training/sales-training-courses', [SelfLearningController::class, 'sales']);
+Route::get('/training/applicatons-training-courses', [SelfLearningController::class, 'apps']);
+Route::get('/training/new-comers/{segment}', [SelfLearningController::class, 'segment']);
 
 Route::get('/technical-services', function() { return inertia('Technical/Index'); });
 Route::get('/solutions', function() { return inertia('Solutions/Index'); });

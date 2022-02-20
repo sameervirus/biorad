@@ -44,12 +44,26 @@
               class="dropdown-menu text-small user-dropdown"
               aria-labelledby="navbarDropdown"
             >
-              <li v-for="g in categories" :key="g.slug">
+              <li>
                 <Link
                   class="dropdown-item"
-                  :href="`/training?category=${g.slug}`"
-                  v-html="g.name"
-                ></Link>
+                  href="/training/self-learning-courses"
+                  >Self Learning Couses</Link
+                >
+              </li>
+              <li>
+                <Link
+                  class="dropdown-item"
+                  href="/training/sales-training-courses"
+                  >Sales Training Courses</Link
+                >
+              </li>
+              <li>
+                <Link
+                  class="dropdown-item"
+                  href="/training/applicatons-training-courses"
+                  >Applicatons Training Courses</Link
+                >
               </li>
             </ul>
           </li>

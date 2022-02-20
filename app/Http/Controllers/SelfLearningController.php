@@ -18,7 +18,7 @@ class SelfLearningController extends Controller
     
     public function website()
     {
-        return Inertia::render('Trainings/Internal', [
+        return Inertia::render('Trainings/Selfs', [
             'selfs' => SelfLearning::all()
                 ->transform(fn ($self) => [
                     'id' => $self->id,
@@ -27,11 +27,64 @@ class SelfLearningController extends Controller
                     'category' => $self->category,
                     'category_slug' => $self->category_slug,
                     'properties' => json_decode($self->properties),
-                    'photo' => $self->photo_path ? URL::route('image', ['path' => $self->photo_path, 'w' => 400, 'fit' => 'fill']) : null,
+                    'photo' => $self->photo_path ? URL::route('image', ['path' => $self->photo_path, 'h' => 400, 'fit' => 'fill-max']) : null,
 
                 ]),
         ]);
     }
+
+    public function sales()
+    {
+        return Inertia::render('Trainings/Sales', [
+            'selfs' => SelfLearning::all()
+                ->transform(fn ($self) => [
+                    'id' => $self->id,
+                    'type' => $self->type,
+                    'type_slug' => $self->type_slug,
+                    'category' => $self->category,
+                    'category_slug' => $self->category_slug,
+                    'properties' => json_decode($self->properties),
+                    'photo' => $self->photo_path ? URL::route('image', ['path' => $self->photo_path, 'h' => 400, 'fit' => 'fill-max']) : null,
+
+                ]),
+        ]);
+    }
+
+    public function apps()
+    {
+        return Inertia::render('Trainings/Applications', [
+            'selfs' => SelfLearning::all()
+                ->transform(fn ($self) => [
+                    'id' => $self->id,
+                    'type' => $self->type,
+                    'type_slug' => $self->type_slug,
+                    'category' => $self->category,
+                    'category_slug' => $self->category_slug,
+                    'properties' => json_decode($self->properties),
+                    'photo' => $self->photo_path ? URL::route('image', ['path' => $self->photo_path, 'h' => 400, 'fit' => 'fill-max']) : null,
+
+                ]),
+        ]);
+    }
+
+    public function segment($segment)
+    {
+        return Inertia::render('Trainings/Internal', [
+            'segment' => $segment,
+            'selfs' => SelfLearning::all()
+                ->transform(fn ($self) => [
+                    'id' => $self->id,
+                    'type' => $self->type,
+                    'type_slug' => $self->type_slug,
+                    'category' => $self->category,
+                    'category_slug' => $self->category_slug,
+                    'properties' => json_decode($self->properties),
+                    'photo' => $self->photo_path ? URL::route('image', ['path' => $self->photo_path, 'h' => 400, 'fit' => 'fill-max']) : null,
+
+                ]),
+        ]);
+    }
+
     // 'type', 'type_slug', 'category', 'category_slug', 'properties',
     
     public function index()

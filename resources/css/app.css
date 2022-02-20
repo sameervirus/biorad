@@ -624,6 +624,15 @@ ul {
   background-color: var(--light-color);
 }
 
+.btn-lights {
+  color: #ffffff;
+  background-color: var(--light-color);
+}
+
+.btn-lights:hover {
+  background-color: var(--dark-color);
+}
+
 @keyframes spinning {
   0% {
     transform: rotate(0deg);
@@ -868,6 +877,10 @@ ul {
   min-height: 200px;
 }
 
+.h-400 {
+  min-height: 400px;
+}
+
 .solutions .text-box {
   color: #000;
 }
@@ -911,6 +924,12 @@ ul {
   color: #ffffff;
   font-size: 0.6rem;
   margin-left: 1rem;
+}
+
+.banner-sales {
+  background-color: #1d2530;
+  color: #ffffff;
+  padding: 3rem;
 }
 @media (min-width: 640px) {
   .login-section {

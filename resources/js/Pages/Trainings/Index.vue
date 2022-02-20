@@ -162,21 +162,19 @@
         <Carousel :items-to-show="2" :breakpoints="breakpoints_beginer">
           <Slide v-for="slide in selfs" :key="slide.type_slug">
             <div class="me-2 carousel__item beginer">
-              <Link
-                :href="`/training/self-learning-courses#${slide.type_slug}`"
-              >
+              <Link :href="`/training/new-comers/${slide.type_slug}`">
                 <img class="w-100" :src="`img/${slide.type_slug}.jpg`" alt="" />
               </Link>
               <div class="p-2 text-center">
                 <Link
-                  :href="`/training/self-learning-courses#${slide.type_slug}`"
+                  :href="`/training/new-comers/${slide.type_slug}`"
                   class=""
                 >
                   <h4 class="name">{{ slide.type }}</h4>
                 </Link>
                 <Link
                   class="card-btn"
-                  :href="`/training/self-learning-courses#${slide.type_slug}`"
+                  :href="`/training/new-comers/${slide.type_slug}`"
                 >
                   Know more
                 </Link>
