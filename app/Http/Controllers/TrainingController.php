@@ -184,7 +184,7 @@ class TrainingController extends Controller
 
         $training->update(Request::only('name','category','type', 'by', 'area', 'training_time', 'short_desc','description'));
         $training->update(['training_date' => date('Y-m-d', strtotime(Request::get('training_date')))]);
-        $training->update(['category_slug' => Str::slug('category')]);
+        $training->update(['category_slug' => Str::slug(Request::get('category'))]);
 
         if (Request::file('photo')) {
             $training->update(['photo_path' => Request::file('photo')->store('trainings')]);

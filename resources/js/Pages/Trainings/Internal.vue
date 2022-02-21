@@ -47,6 +47,20 @@
       </div>
     </div>
     <div v-else id="quality-control" class="section-warp">
+      <div id="infectious-disease-microbiology" class="section-warp pb-3">
+        <div class="section-head">
+          <h1 class="section-title mb-0">
+            <h1 class="section-title mb-0">
+              {{
+                getTitle().name.substring(0, getTitle().name.lastIndexOf(' '))
+              }}
+              <span class="text-color-dark">{{
+                getTitle().name.split(' ').pop()
+              }}</span>
+            </h1>
+          </h1>
+        </div>
+      </div>
       <div class="section-body">
         <div class="container">
           <div class="row justify-content-center">
@@ -56,16 +70,18 @@
               class="col-md-4"
             >
               <div class="video-warp">
-                <div class="position-relative linear-background h-200">
-                  <img :src="t.photo" :alt="t.title" class="w-100" />
-                </div>
-              </div>
-              <div class="video-warp">
                 <div
                   @click="setVideo(t.properties.link)"
                   class="position-relative linear-background h-200"
                 >
-                  <img :src="t.photo" :alt="t.title" class="w-100" />
+                  <img
+                    :src="`https://img.youtube.com/vi/${t.properties.link
+                      .split('/')
+                      .pop()}/0.jpg`"
+                    onerror="this.src='{{t.photo}}'"
+                    :alt="t.title"
+                    class="w-100"
+                  />
                   <span class="over-icon">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"

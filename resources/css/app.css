@@ -561,23 +561,27 @@ ul {
   justify-content: center;
 }
 .login-title {
-  margin-bottom: 0.5rem;
-  margin-top: 1rem;
+  margin-bottom: 1rem;
+  margin-top: 1.5rem;
   font-size: 2.25rem;
   line-height: 2.5rem;
   font-weight: 800;
   text-transform: uppercase;
+  color: var(--dark-color);
 }
 .login-subtitle {
   font-size: 1.875rem;
   line-height: 2.25rem;
   text-transform: uppercase;
+  font-weight: 300;
+}
+.login-form {
+  border: 1px solid #eee;
+  border-radius: 1rem;
+  padding: 1rem;
 }
 .form-box {
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
+  padding: 1rem;
 }
 .form-title {
   font-size: 1.25rem;
@@ -724,6 +728,7 @@ ul {
   background-color: var(--dark-color);
   color: white;
 }
+
 .ih-box {
   margin-top: 1rem;
   margin-bottom: 1rem;
@@ -915,15 +920,24 @@ ul {
   justify-content: space-between;
   margin-bottom: 1rem;
 }
+.covid .covid-icon {
+  width: 15%;
+}
+.covid .covid-icon svg {
+  width: 100%;
+}
 .covid .covid-text {
   color: #ffffff;
-  margin-left: 1rem;
+  margin-left: 0.5rem;
   font-size: 0.9rem;
+}
+.covid .covid-sub {
+  width: 25%;
 }
 .covid .covid-sub a {
   color: #ffffff;
   font-size: 0.6rem;
-  margin-left: 1rem;
+  margin-left: 0.5rem;
 }
 
 .banner-sales {
@@ -931,6 +945,20 @@ ul {
   color: #ffffff;
   padding: 3rem;
 }
+
+.register-model .modal-header,
+.register-model .modal-footer {
+  border-bottom: none;
+  border-top: none;
+}
+.register-model .modal-footer {
+  justify-content: space-between;
+}
+.register-model .btn {
+  padding: 0.2rem 1.5rem;
+  font-size: 1rem;
+}
+
 @media (min-width: 640px) {
   .login-section {
     padding-left: 1.5rem;
@@ -1087,7 +1115,7 @@ ul {
     font-size: 1rem;
   }
   .training-card .card-name {
-    min-height: 3rem;
+    min-height: 5rem;
   }
   .training-card .card-desc {
     min-height: 3rem;
@@ -1107,8 +1135,8 @@ ul {
     justify-content: start;
   }
   .login-section {
-    padding-left: 6rem;
-    padding-right: 6rem;
+    padding-left: 4rem;
+    padding-right: 4rem;
     width: 40%;
   }
   .nav-warp {

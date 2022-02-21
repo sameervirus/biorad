@@ -106,7 +106,10 @@
           <div class="col-md-9 bg-white">
             <div v-if="selectedTrainings.length > 0" class="slider">
               <Carousel :breakpoints="breakpoints" :items-to-show="1">
-                <Slide v-for="training in selectedTrainings" :key="training.id">
+                <Slide
+                  v-for="(training, index) in selectedTrainings"
+                  :key="training.id"
+                >
                   <div class="training-card carousel__item">
                     <div class="card-head">
                       <div class="card-date">
@@ -125,7 +128,10 @@
                         <span class="fs-6 fw-bold">{{ training.by }}</span>
                       </div>
                     </div>
-                    <a class="linear-background h-150" href="#">
+                    <a
+                      class="linear-background h-150"
+                      href="javascript:void(0)"
+                    >
                       <img
                         class="slide-image"
                         :src="training.photo"
@@ -133,14 +139,27 @@
                       />
                     </a>
                     <div class="py-2">
-                      <a href="#">
+                      <a href="javascript:void(0)">
                         <h4 class="card-name">{{ training.name }}</h4>
                         <h4 class="card-area">{{ training.area }}</h4>
                       </a>
-                      <a href="#">
+                      <a href="javascript:void(0)">
                         <p class="card-desc">{{ training.short_desc }}</p>
                       </a>
-                      <a href="#" class="card-btn"> Register Now </a>
+                      <a
+                        class="card-btn bg-color-dark"
+                        v-if="selectedCourses.includes(training.id)"
+                        disabled
+                        >Registerd</a
+                      >
+                      <a
+                        v-else
+                        href="javascript:void(0)"
+                        @click="registerThis(training, index)"
+                        class="card-btn"
+                      >
+                        Register Now
+                      </a>
                     </div>
                   </div>
                 </Slide>
@@ -150,7 +169,7 @@
                 </template>
               </Carousel>
             </div>
-            <div v-else class="w-100 text-center">
+            <div v-else class="w-100 text-center h-400">
               There is no courses right now
             </div>
           </div>
@@ -201,55 +220,99 @@
         <div class="row justify-content-center">
           <div class="col-md-4">
             <div class="me-2 carousel__item beginer">
-              <a href="/training/self-learning-courses">
+              <Link href="/training/self-learning-courses">
                 <img class="w-100" src="img/a01.jpg" alt="" />
-              </a>
+              </Link>
               <div class="p-2 text-center">
-                <a href="/training/self-learning-courses" class="">
+                <Link href="/training/self-learning-courses" class="">
                   <h4 class="name mb-0">Self Learning Courses</h4>
-                </a>
-                <a href="/training/self-learning-courses" class="card-btn">
+                </Link>
+                <Link href="/training/self-learning-courses" class="card-btn">
                   Know More
-                </a>
+                </Link>
               </div>
             </div>
           </div>
           <div class="col-md-4">
             <div class="me-2 carousel__item beginer">
-              <a href="/training/sales-training-courses">
+              <Link href="/training/sales-training-courses">
                 <img class="w-100" src="img/a02.jpg" alt="" />
-              </a>
+              </Link>
               <div class="p-2 text-center">
-                <a href="/training/sales-training-courses" class="">
+                <Link href="/training/sales-training-courses" class="">
                   <h4 class="name mb-0">Sales Training Courses</h4>
-                </a>
-                <a href="/training/sales-training-courses" class="card-btn">
+                </Link>
+                <Link href="/training/sales-training-courses" class="card-btn">
                   Know More
-                </a>
+                </Link>
               </div>
             </div>
           </div>
           <div class="col-md-4">
             <div class="me-2 carousel__item beginer">
-              <a href="/training/applicatons-training-courses">
+              <Link href="/training/applicatons-training-courses">
                 <img class="w-100" src="img/a03.jpg" alt="" />
-              </a>
+              </Link>
               <div class="p-2 text-center">
-                <a href="/training/applicatons-training-courses" class="">
+                <Link href="/training/applicatons-training-courses" class="">
                   <h4 class="name mb-0">Applicatons Training Courses</h4>
-                </a>
-                <a
+                </Link>
+                <Link
                   href="/training/applicatons-training-courses"
                   class="card-btn"
                 >
                   Know More
-                </a>
+                </Link>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+    <vue-final-modal :click-to-close="true" v-model="showModal">
+      <div class="d-flex vh-100">
+        <div class="modal d-block register-model" tabindex="-1">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Register</h5>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                  @click="showModal = false"
+                ></button>
+              </div>
+              <div class="modal-body">
+                <p>
+                  {{ $page.props.auth.user.first_name }}, you about register in
+                  course {{ course.name }}
+                </p>
+                <p>Date: {{ course.training_date }}</p>
+                <p>Time: {{ course.training_time }}</p>
+              </div>
+              <div class="modal-footer">
+                <a
+                  @click="showModal = false"
+                  class="btn btn-greens"
+                  href="javascript:void(0)"
+                >
+                  Cancel
+                </a>
+                <a
+                  @click="registered(course)"
+                  class="btn btn-lights"
+                  href="javascript:void(0)"
+                >
+                  Register
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </vue-final-modal>
   </div>
 </template>
 
@@ -257,6 +320,7 @@
 import { Head, Link } from '@inertiajs/inertia-vue3'
 import App from '@/Layouts/App'
 import { Carousel, Navigation, Slide, Pagination } from 'vue3-carousel'
+import { $vfm, VueFinalModal, ModalsContainer } from 'vue-final-modal'
 
 import 'vue3-carousel/dist/carousel.css'
 
@@ -268,6 +332,8 @@ export default {
     Navigation,
     Pagination,
     Link,
+    VueFinalModal,
+    ModalsContainer,
   },
   props: {
     trainings: Array,
@@ -284,7 +350,7 @@ export default {
     },
     changeCategory(s) {
       this.selectedCategory = s
-      this.selectedDate = new Date()
+      this.selectedDate = null
       this.filterTrainings()
     },
     searchItems(str) {
@@ -339,9 +405,20 @@ export default {
       const option = { month: 'long' }
       return event.toLocaleDateString(undefined, option)
     },
+    registerThis(course) {
+      this.course = course
+      this.showModal = true
+    },
+    registered(course) {
+      this.selectedCourses.push(course.id)
+      this.showModal = false
+    },
   },
   data() {
     return {
+      showModal: false,
+      course: {},
+      selectedCourses: [],
       selectedTrainings: [],
       selectedCategory: this.filters.category ?? 'self-learning-couses',
       selectedDate: null,

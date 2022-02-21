@@ -27,14 +27,14 @@
           </Link>
           <Link
             href="/solutions"
-            :class="{ active: $page.component === 'Solutions/Index' }"
+            :class="{ active: $page.component.startsWith('Solutions/') }"
             class="menu-item"
           >
             Our Solutions
           </Link>
           <li
             class="menu-item"
-            :class="{ active: $page.component === 'Trainings/Index' }"
+            :class="{ active: $page.component.startsWith('Trainings/') }"
             role="button"
             aria-expanded="false"
           >
@@ -70,21 +70,21 @@
           <Link
             href="/events"
             class="menu-item"
-            :class="{ active: $page.component === 'Events/Index' }"
+            :class="{ active: $page.component.startsWith('Events/') }"
           >
             Events
           </Link>
           <Link
             href="/collateral-resources"
             class="menu-item"
-            :class="{ active: $page.component === 'Collateral/Index' }"
+            :class="{ active: $page.component.startsWith('Collateral/') }"
           >
             Collateral Resources
           </Link>
           <Link
             href="/technical-services"
             class="menu-item"
-            :class="{ active: $page.component === 'Technical/Index' }"
+            :class="{ active: $page.component.startsWith('Technical/') }"
           >
             Technical Services
           </Link>

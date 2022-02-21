@@ -524,7 +524,6 @@
 <script>
 import { Head } from '@inertiajs/inertia-vue3'
 import App from '@/Layouts/App'
-import CategoryCourses from '@/Components/CategoryCourses'
 import { $vfm, VueFinalModal, ModalsContainer } from 'vue-final-modal'
 
 export default {
@@ -532,7 +531,6 @@ export default {
     Head,
     VueFinalModal,
     ModalsContainer,
-    CategoryCourses,
   },
   props: {
     selfs: Array,
